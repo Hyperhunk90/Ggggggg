@@ -719,3 +719,111 @@ html.js .reveal.is-visible{ opacity:1; transform: translateY(0); }
   .cta-band__inner{ flex-direction:column; align-items:flex-start; }
   .rating-block{ gap:1rem; }
 }
+
+/* =========================================================
+   2026 art direction — "Electric Ledger"
+   A bold, editorial home page: aubergine ink, citrus signals,
+   tactile paper and a deliberately off-grid tax-file collage.
+   ========================================================= */
+:root{
+  --ink:#24134f;
+  --ink-soft:#332064;
+  --ink-60:rgba(36,19,79,.66);
+  --ink-30:rgba(36,19,79,.25);
+  --paper:#fffaf0;
+  --paper-dim:#f0e8ff;
+  --paper-line:rgba(36,19,79,.13);
+  --pine:#5731a5;
+  --pine-deep:#24134f;
+  --pine-soft:#764fd0;
+  --coral:#ff6b35;
+  --coral-deep:#df4813;
+  --coral-glow:rgba(255,107,53,.25);
+  --gold:#b9ff66;
+  --cream:#fffdf7;
+  --radius:26px;
+}
+
+body{ background-image:radial-gradient(rgba(36,19,79,.08) .7px,transparent .7px); background-size:18px 18px; }
+.site-header{ background:rgba(255,250,240,.88); }
+.site-header::after{ content:""; position:absolute; inset:auto 0 -1px; height:2px; background:linear-gradient(90deg,var(--coral),#da7cff,var(--gold)); transform:scaleX(.34); transform-origin:left; }
+.brand__word span{ color:var(--pine); }
+.btn{ border-radius:12px; box-shadow:3px 3px 0 var(--ink); }
+.btn:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); }
+.btn--outline{ background:rgba(255,250,240,.62); }
+.btn--outline:hover{ box-shadow:6px 6px 0 var(--coral); }
+.eyebrow::before{ width:10px; height:10px; border-radius:2px; transform:rotate(45deg); }
+
+.hero--studio{
+  min-height:760px; display:flex; align-items:center;
+  padding:clamp(4rem,8vw,7rem) 0;
+  background:linear-gradient(118deg,#fffaf0 0 56%,#e8d9ff 56% 100%);
+  isolation:isolate;
+}
+.hero--studio::after{ content:""; position:absolute; inset:0; z-index:-1; opacity:.24; background-image:linear-gradient(rgba(36,19,79,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(36,19,79,.12) 1px,transparent 1px); background-size:42px 42px; mask-image:linear-gradient(90deg,transparent,black 70%); }
+.hero__orb{ position:absolute; border-radius:50%; filter:blur(1px); pointer-events:none; z-index:-1; }
+.hero__orb--one{ width:330px; height:330px; right:-120px; top:5%; background:#b9ff66; }
+.hero__orb--two{ width:170px; height:170px; left:47%; bottom:-85px; background:#ff8c63; }
+.hero__ghost{ top:auto; right:auto; left:-.03em; bottom:-.13em; font-size:clamp(8rem,18vw,16rem); -webkit-text-stroke:1px rgba(36,19,79,.1); letter-spacing:-.08em; }
+.hero__grid{ grid-template-columns:1.02fr .98fr; gap:clamp(2rem,6vw,6rem); }
+.hero__status{ display:inline-flex; align-items:center; gap:.55rem; margin-bottom:1.3rem; padding:.42rem .75rem; border:1px solid var(--ink); border-radius:999px; background:var(--gold); font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; box-shadow:2px 2px 0 var(--ink); }
+.hero__status span{ width:7px; height:7px; background:var(--coral); border-radius:50%; animation:pulse 1.8s ease infinite; }
+@keyframes pulse{ 50%{ box-shadow:0 0 0 5px rgba(255,107,53,.2); } }
+.hero--studio h1{ max-width:8ch; font-size:clamp(3.7rem,7.4vw,6.8rem); line-height:.83; letter-spacing:-.065em; margin-bottom:.3em; }
+.hero--studio h1 em{ color:var(--coral); font-weight:500; position:relative; }
+.hero--studio h1 em::after{ content:""; position:absolute; height:8px; left:3%; right:-7%; bottom:2px; background:var(--gold); z-index:-1; transform:rotate(-2deg); }
+.hero--studio .lede{ max-width:53ch; }
+.hero__trustline{ flex-wrap:wrap; }
+.hero__trustline span{ display:flex; align-items:center; gap:.35rem; }
+
+.hero__visual{ min-height:520px; position:relative; z-index:2; }
+.tax-card{ position:absolute; inset:18px 12px 30px 18px; overflow:hidden; padding:1.6rem; color:#fffaf0; background:var(--ink); border:2px solid var(--ink); border-radius:30px; box-shadow:16px 18px 0 var(--coral),26px 29px 0 var(--gold); transform:rotate(3deg); }
+.tax-card::after{ content:""; position:absolute; width:290px; height:290px; border:74px solid #734ac8; border-radius:50%; right:-120px; top:86px; opacity:.8; }
+.tax-card__top,.tax-card__bottom{ position:relative; z-index:2; display:flex; justify-content:space-between; font-size:.58rem; letter-spacing:.16em; font-weight:800; }
+.tax-card__mark{ font-family:var(--font-display); font-size:11rem; line-height:.9; color:#b9ff66; opacity:.95; position:absolute; right:25px; top:68px; z-index:1; }
+.tax-card__copy{ position:absolute; z-index:3; left:1.6rem; bottom:5rem; }
+.tax-card__copy small{ display:block; color:#d3c3fb; text-transform:uppercase; letter-spacing:.13em; margin-bottom:.5rem; }
+.tax-card__copy strong{ font-family:var(--font-display); font-size:clamp(1.7rem,3vw,2.4rem); line-height:1; font-weight:500; }
+.tax-card__line{ position:absolute; left:1.6rem; right:1.6rem; bottom:3.5rem; border-top:1px solid rgba(255,255,255,.28); }
+.tax-card__bottom{ position:absolute; left:1.6rem; right:1.6rem; bottom:1.6rem; color:#b9ff66; }
+.float-note{ position:absolute; z-index:5; display:flex; flex-direction:column; padding:1rem 1.15rem; border:2px solid var(--ink); box-shadow:6px 6px 0 var(--ink); transform:rotate(-5deg); }
+.float-note--rating{ left:-28px; top:64px; background:#fffaf0; border-radius:14px; }
+.float-note--rating span{ color:var(--coral); font-size:.68rem; letter-spacing:.08em; }
+.float-note--rating b{ font-family:var(--font-display); font-size:2rem; line-height:1; }
+.float-note small{ font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+.float-note--mobile{ right:-23px; bottom:46px; background:var(--gold); border-radius:50%; width:155px; height:155px; align-items:center; justify-content:center; text-align:center; transform:rotate(8deg); }
+.float-note__icon{ font-size:2rem; line-height:.8; }
+.hero__scribble{ position:absolute; right:25px; top:-18px; color:var(--ink); font-family:var(--font-display); font-style:italic; transform:rotate(5deg); }
+
+.trust-strip{ background:var(--ink); color:var(--paper); border:0; padding:1.25rem 0; }
+.trust-item{ color:rgba(255,250,240,.8); }
+.trust-item svg{ color:var(--gold); }
+.svc-card{ border:2px solid var(--ink); box-shadow:7px 7px 0 var(--ink); }
+.svc-card:nth-child(2){ background:#e8d9ff; }
+.svc-card:nth-child(3){ background:#dfffb9; }
+.svc-card:nth-child(4){ background:#ffd9c9; }
+.svc-card:hover{ box-shadow:11px 11px 0 var(--coral); }
+.portrait-frame{ border:2px solid var(--ink); box-shadow:14px 14px 0 var(--gold); border-radius:38% 38% 24px 24px; background:linear-gradient(145deg,#734ac8,var(--ink)); }
+.cta-band{ background:var(--coral); }
+
+@media (max-width:980px){
+  .hero--studio{ min-height:auto; background:linear-gradient(155deg,#fffaf0 0 62%,#e8d9ff 62%); }
+  .hero__grid{ grid-template-columns:1fr; }
+  .hero__visual{ min-height:480px; max-width:560px; width:100%; margin:1rem auto 0; }
+}
+@media (max-width:600px){
+  .hero--studio h1{ font-size:clamp(3.55rem,18vw,5.2rem); }
+  .hero__visual{ min-height:400px; width:94%; }
+  .tax-card{ inset:14px 0 26px; padding:1.2rem; box-shadow:10px 12px 0 var(--coral),17px 20px 0 var(--gold); }
+  .tax-card__mark{ font-size:8rem; right:12px; }
+  .tax-card__copy{ left:1.2rem; }
+  .tax-card__bottom{ left:1.2rem; right:1.2rem; }
+  .float-note--rating{ left:-12px; top:52px; }
+  .float-note--mobile{ width:120px; height:120px; right:-16px; bottom:20px; }
+  .hero__scribble{ display:none; }
+  .hero__actions .btn{ width:100%; justify-content:center; }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{ scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
+}
